@@ -17,6 +17,7 @@ import com.google.gson.Gson;
 import dao.AvaliacoesDao;
 import java.sql.SQLException;
 import java.util.List;
+import javax.ws.rs.PathParam;
 import modelo.Avaliacoes;
 
 /**
@@ -44,11 +45,12 @@ public class AvaliacoesWS {
     
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("get/avaliacoes")
-    public String findAll() throws ClassNotFoundException, SQLException{
+    @Path("get/{id_user}")
+    public String find(@PathParam("id_user") Integer id_sup) throws ClassNotFoundException, SQLException{
         Gson g = new Gson();
         AvaliacoesDao dao = new AvaliacoesDao();
-        List<Avaliacoes> avaliacoes = dao.findAll();
+        List<Avaliacoes> avaliacoes = dao.find(id_sup);
+        
         
         return g.toJson(avaliacoes);
         

@@ -29,10 +29,10 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(ws.UsuarioWS.class);
-        resources.add(ws.SupermercadoWS.class);
         resources.add(ws.AvaliacoesWS.class);
         resources.add(ws.FavoritosWS.class);
+        resources.add(ws.SupermercadoWS.class);
+        resources.add(ws.UsuarioWS.class);
     }
     
 }

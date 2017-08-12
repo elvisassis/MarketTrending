@@ -5,6 +5,7 @@
  */
 package modelo;
 
+
 /**
  *
  * @author elvis
@@ -18,7 +19,117 @@ package modelo;
   `sup_id_sup` INT NOT NULL,
   `user_id_user` INT NOT NULL
  */
+
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Avaliacoes {
+
+@SerializedName("id_avaliacao")
+@Expose
+private Integer idAvaliacao;
+@SerializedName("hortifrut")
+@Expose
+private Integer hortifrut;
+@SerializedName("padaria")
+@Expose
+private Integer padaria;
+@SerializedName("acougue")
+@Expose
+private Integer acougue;
+@SerializedName("frios")
+@Expose
+private Integer frios;
+@SerializedName("caixa")
+@Expose
+private Integer caixa;
+@SerializedName("comentarios")
+@Expose
+private String comentarios;
+@SerializedName("sup_id_sup")
+@Expose
+private Integer supIdSup;
+@SerializedName("user_id_user")
+@Expose
+private Integer userIdUser;
+
+public Integer getIdAvaliacao() {
+return idAvaliacao;
+}
+
+public void setIdAvaliacao(Integer idAvaliacao) {
+this.idAvaliacao = idAvaliacao;
+}
+
+public Integer getHortifrut() {
+return hortifrut;
+}
+
+public void setHortifrut(Integer hortifrut) {
+this.hortifrut = hortifrut;
+}
+
+public Integer getPadaria() {
+return padaria;
+}
+
+public void setPadaria(Integer padaria) {
+this.padaria = padaria;
+}
+
+public Integer getAcougue() {
+return acougue;
+}
+
+public void setAcougue(Integer acougue) {
+this.acougue = acougue;
+}
+
+public Integer getFrios() {
+return frios;
+}
+
+public void setFrios(Integer frios) {
+this.frios = frios;
+}
+
+public Integer getCaixa() {
+return caixa;
+}
+
+public void setCaixa(Integer caixa) {
+this.caixa = caixa;
+}
+
+public String getComentarios() {
+return comentarios;
+}
+
+public void setComentarios(String comentarios) {
+this.comentarios = comentarios;
+}
+
+public Integer getSupIdSup() {
+return supIdSup;
+}
+
+public void setSupIdSup(Integer supIdSup) {
+this.supIdSup = supIdSup;
+}
+
+public Integer getUserIdUser() {
+return userIdUser;
+}
+
+public void setUserIdUser(Integer userIdUser) {
+this.userIdUser = userIdUser;
+}
+
+}
+
+
+/*public class Avaliacoes {
+    
     private int id_avaliacao;
     private int hortifrut;
     private int padaria;
@@ -121,4 +232,4 @@ public class Avaliacoes {
     
     
     
-}
+}*/

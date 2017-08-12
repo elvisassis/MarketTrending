@@ -34,27 +34,29 @@ public class AvaliacoesDao {
     private Connection con;
     private String sql;
     
-    public List<Avaliacoes> findAll() throws ClassNotFoundException, SQLException{
+    public List<Avaliacoes> find(int sup_id_sup) throws ClassNotFoundException, SQLException{
         
         List <Avaliacoes> avaliacoes = new ArrayList<>();
+        
         Avaliacoes u = null;
-        sql = "SELECT * FROM avaliacoes;";
+        sql = "SELECT * FROM avaliacoes WHERE sup_id_sup = ?;";
         con = C.cb();
         pst = con.prepareStatement(sql);
+        pst.setInt(1, sup_id_sup);
         rs = pst.executeQuery();
         while(rs.next()){
             u = new Avaliacoes();
-            
-            u.setId_avaliacao(rs.getInt("id_avaliacao"));
+           
+            u.setIdAvaliacao(rs.getInt("id_avaliacao"));
             u.setHortifrut(rs.getInt("hortifrut"));
             u.setPadaria(rs.getInt("padaria"));
             u.setAcougue(rs.getInt("acougue"));
             u.setFrios(rs.getInt("frios"));
             u.setCaixa(rs.getInt("caixa"));
             u.setComentarios(rs.getString("comentarios"));
-            u.setSup_id_sup(rs.getInt("sup_id_sup"));
-            u.setUser_id_user(rs.getInt("user_id_user"));
-          
+            u.setSupIdSup(rs.getInt("sup_id_sup"));
+            u.setUserIdUser(rs.getInt("user_id_user"));
+            
             
             avaliacoes.add(u);
         }
